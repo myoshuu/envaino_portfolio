@@ -94,7 +94,7 @@
           <div
             class="border rounded-lg p-2 hover:border-red-400 transition-colors"
           >
-            <a href="mailto: envaino@gmail.com">
+            <a href="mailto: envaino@gmail.com " target="_blank">
               <div class="card-title flex items-center">
                 <fa :icon="['fas', 'envelope']" class="text-lg text-red-600" />
                 <p class="ml-3 text-red-600">Gmail</p>
@@ -120,7 +120,7 @@
               transition-colors
             "
           >
-            <a href="https://envaino.id">
+            <a href="https://envaino.id" target="_blank">
               <div class="card-title flex items-center">
                 <fa :icon="['fas', 'globe']" class="text-lg text-slate-600" />
                 <p class="ml-3 text-slate-600">Website</p>
@@ -172,7 +172,7 @@
               transition-colors
             "
           >
-            <a href="https://www.instagram.com/envaino/">
+            <a href="https://www.instagram.com/envaino/" target="_blank">
               <div class="card-title flex items-center">
                 <fa
                   :icon="['fab', 'instagram']"
@@ -195,7 +195,7 @@
 
       <!-- Copyright -->
       <div class="copyright text-xs text-slate-400 text-center mt-10">
-        <p>Copyright &copy; <span></span> envaino.id</p>
+        <p>Copyright &copy; {{ new Date().getFullYear() }} envaino.id</p>
       </div>
     </section>
 
@@ -224,12 +224,12 @@
         </div>
 
         <!-- Button -->
-        <a href="https://www.youtube.com/c/envaino">
+        <a href="https://www.youtube.com/c/envaino" target="_blank">
           <div class="border py-5 rounded-xl hover:border-red-300">
             <p class="text-center">envaino</p>
           </div>
         </a>
-        <a href="https://www.youtube.com/c/envainoid">
+        <a href="https://www.youtube.com/c/envainoid" target="_blank">
           <div class="border py-5 rounded-xl hover:border-red-300">
             <p class="text-center">envaino.id</p>
           </div>
@@ -288,7 +288,6 @@ p.sub-title {
   z-index: 2;
   background: white;
   box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.15);
-  transition: 150ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .overlay {
