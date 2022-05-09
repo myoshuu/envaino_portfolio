@@ -1,6 +1,5 @@
 <template>
   <div class="flex justify-center align-center mx-5 my-5">
-    <div class="overlay"></div>
     <!-- <p class="uppercase text-xs p-2 text-slate-400">Pdt. Edy Pangangkat</p> -->
     <section class="border rounded-md p-10 w-3/4">
       <!-- Header -->
@@ -45,6 +44,7 @@
             <a
               class=""
               href="https://api.whatsapp.com/send?phone=https://api.whatsapp.com/send?phone=https://wa.me/628979704444"
+              target="_blank"
             >
               <div class="card-title flex items-center">
                 <fa
@@ -74,7 +74,7 @@
               transition-colors
             "
           >
-            <a href="https://facebook.com/edy.pangangkat">
+            <a href="https://facebook.com/edy.pangangkat" target="_blank">
               <div class="card-title flex items-center">
                 <fa :icon="['fab', 'facebook']" class="text-xl text-blue-600" />
                 <p class="ml-3 text-blue-600">Facebook</p>
@@ -96,10 +96,7 @@
           >
             <a href="mailto: envaino@gmail.com">
               <div class="card-title flex items-center">
-                <fa
-                  :icon="['fas', 'paper-plane']"
-                  class="text-lg text-red-600"
-                />
+                <fa :icon="['fas', 'envelope']" class="text-lg text-red-600" />
                 <p class="ml-3 text-red-600">Gmail</p>
               </div>
               <div class="card-content mt-3">
@@ -195,42 +192,49 @@
           </div>
         </div>
       </div>
+
+      <!-- Copyright -->
+      <div class="copyright text-xs text-slate-400 text-center mt-10">
+        <p>Copyright &copy; <span></span> envaino.id</p>
+      </div>
     </section>
 
     <!-- Modal -->
-    <div
-      class="
-        modal
-        bg-white
-        w-1/5
-        py-1
-        px-3
-        border
-        rounded-xl
-        flex flex-col
-        justify-evenly
-      "
-      id="modal"
-    >
-      <div class="title mb-2 flex items-center justify-between">
-        <p>Choose The Channel</p>
-        <fa
-          class="hover:text-red-700 cursor-pointer"
-          :icon="['fas', 'times']"
-        />
-      </div>
+    <div class="modal-parent" id="modal">
+      <div
+        class="
+          modal
+          bg-white
+          w-1/5
+          py-1
+          px-3
+          border
+          rounded-xl
+          flex flex-col
+          justify-evenly
+        "
+      >
+        <div class="title mb-2 flex items-center justify-between">
+          <p>Choose The Channel</p>
+          <fa
+            class="hover:text-red-700 cursor-pointer"
+            :icon="['fas', 'times']"
+            @click="show"
+          />
+        </div>
 
-      <!-- Button -->
-      <a href="https://youtube/c/envaino">
-        <div class="border py-5 rounded-xl hover:border-red-300">
-          <p class="text-center">envaino</p>
-        </div>
-      </a>
-      <a href="https://youtube/c/envaino">
-        <div class="border py-5 rounded-xl hover:border-red-300">
-          <p class="text-center">envaino.id</p>
-        </div>
-      </a>
+        <!-- Button -->
+        <a href="https://www.youtube.com/c/envaino">
+          <div class="border py-5 rounded-xl hover:border-red-300">
+            <p class="text-center">envaino</p>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/c/envainoid">
+          <div class="border py-5 rounded-xl hover:border-red-300">
+            <p class="text-center">envaino.id</p>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -238,15 +242,19 @@
 <script>
 // Components
 import SkillCard from "@/components/SkillCard.vue";
+import Card from "@/components/Card.vue";
 
 export default {
   name: "App",
   components: {
     SkillCard,
+    Card,
   },
   methods: {
-    modal() {
+    show() {
       let modal = document.getElementById("modal");
+      // console.log("tes");
+      modal.classList.toggle("active");
     },
   },
 };
@@ -270,9 +278,9 @@ p.sub-title {
 }
 
 .modal {
-  position: fixed;
+  position: absolute;
   z-index: 2;
-  top: 50%;
+  top: 73%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
   width: 250px;
@@ -288,17 +296,19 @@ p.sub-title {
   display: none;
   background: rgba(0, 0, 0, 0.15);
   top: 0;
-  z-index: 1;
   left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
   width: 100vw;
   height: 100vh;
 }
 
-.modal.active .overlay {
+.modal-parent.active .overlay {
   display: block;
 }
 
-.modal.active {
+.modal-parent.active .modal {
   transform: scale(1);
 }
 </style>
