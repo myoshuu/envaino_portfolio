@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center align-center mx-5 my-5">
     <!-- <p class="uppercase text-xs p-2 text-slate-400">Pdt. Edy Pangangkat</p> -->
-    <section class="border rounded-md p-10 w-3/4">
+    <section class="border rounded-md p-10 w-full w-full xl:w-5/6">
       <!-- Header -->
       <header>
         <div class="title text-lg text-slate-500 text-center lowercase">
@@ -30,7 +30,18 @@
         <div class="title text-lg text-slate-500 my-6 text-center">
           Contact me
         </div>
-        <div class="content p-2 grid grid-cols-3 gap-5 w-4/5">
+        <div
+          class="
+            content
+            p-2
+            grid grid-cols-3
+            gap-5
+            w-4/5
+            sm:grid-cols-1
+            md:grid-cols-2
+            lg:grid-cols-3
+          "
+        >
           <!-- Whatsapp -->
           <div
             class="
@@ -146,7 +157,6 @@
               transition-colors
               cursor-pointer
             "
-            @click="show"
           >
             <div class="card-title flex items-center">
               <fa :icon="['fab', 'youtube']" class="text-lg text-red-600" />
@@ -156,8 +166,14 @@
               <p class="text-sm text-slate-500">Edy Pangangkat</p>
 
               <div class="sub-content flex justify-between items-center">
-                <span>Choose</span>
-                <fa :icon="['fas', 'angle-right']" class="mr-3" />
+                <div class="">
+                  <span>Choose</span> <br />
+                  <div class="text-blue-600">
+                    <a href="https://www.youtube.com/c/envaino">envaino</a>
+                    |
+                    <a href="https://www.youtube.com/c/envainoid">envaino.id</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -198,44 +214,6 @@
         <p>Copyright &copy; {{ new Date().getFullYear() }} envaino.id</p>
       </div>
     </section>
-
-    <!-- Modal -->
-    <div class="modal-parent" id="modal">
-      <div
-        class="
-          modal
-          bg-white
-          w-1/5
-          py-1
-          px-3
-          border
-          rounded-xl
-          flex flex-col
-          justify-evenly
-        "
-      >
-        <div class="title mb-2 flex items-center justify-between">
-          <p>Choose The Channel</p>
-          <fa
-            class="hover:text-red-700 cursor-pointer"
-            :icon="['fas', 'times']"
-            @click="show"
-          />
-        </div>
-
-        <!-- Button -->
-        <a href="https://www.youtube.com/c/envaino" target="_blank">
-          <div class="border py-5 rounded-xl hover:border-red-300">
-            <p class="text-center">envaino</p>
-          </div>
-        </a>
-        <a href="https://www.youtube.com/c/envainoid" target="_blank">
-          <div class="border py-5 rounded-xl hover:border-red-300">
-            <p class="text-center">envaino.id</p>
-          </div>
-        </a>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -249,13 +227,6 @@ export default {
   components: {
     SkillCard,
     Card,
-  },
-  methods: {
-    show() {
-      let modal = document.getElementById("modal");
-      // console.log("tes");
-      modal.classList.toggle("active");
-    },
   },
 };
 </script>
@@ -275,39 +246,5 @@ body {
 
 p.sub-title {
   font-family: "Poppins";
-}
-
-.modal {
-  position: absolute;
-  z-index: 2;
-  top: 73%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  width: 250px;
-  height: 215px;
-  z-index: 2;
-  background: white;
-  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.15);
-}
-
-.overlay {
-  position: fixed;
-  display: none;
-  background: rgba(0, 0, 0, 0.15);
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 1;
-  width: 100vw;
-  height: 100vh;
-}
-
-.modal-parent.active .overlay {
-  display: block;
-}
-
-.modal-parent.active .modal {
-  transform: scale(1);
 }
 </style>

@@ -9,10 +9,16 @@
       transition-colors
       text-sm text-slate-500
       cursor-pointer
+      flex
+      gap-2
+      items-center
       hover:bg-slate-100 hover:text-slate-600
+      sm:w-full sm:text-center
     "
   >
-    <fa :icon="['fa', 'bars-staggered']" class="mr-1" />
+    <div class="sm:hidden md:block">
+      <fa :icon="['fa', 'bars-staggered']" class="mr-1" />
+    </div>
     {{ title }}
   </p>
 </template>
