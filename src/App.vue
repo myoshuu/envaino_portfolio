@@ -37,7 +37,7 @@
             grid grid-cols-3
             gap-5
             w-4/5
-            sm:grid-cols-1
+            sm:w-full sm:grid-cols-1
             md:grid-cols-2
             lg:grid-cols-3
           "
@@ -52,11 +52,7 @@
               p-2
             "
           >
-            <a
-              class=""
-              href="https://api.whatsapp.com/send?phone=https://api.whatsapp.com/send?phone=https://wa.me/628979704444"
-              target="_blank"
-            >
+            <a class="" href="https://wa.me/628979704444" target="_blank">
               <div class="card-title flex items-center">
                 <fa
                   :icon="['fab', 'whatsapp']"
@@ -68,7 +64,7 @@
                 <p class="text-sm text-slate-500">Edy Pangangkat</p>
 
                 <div class="sub-content flex justify-between items-center">
-                  <span>(+62) 897-9704-444</span>
+                  <span class="text-base">(+62) 897-9704-444</span>
                   <fa :icon="['fas', 'angle-right']" class="mr-3" />
                 </div>
               </div>

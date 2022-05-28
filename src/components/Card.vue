@@ -10,7 +10,7 @@
         <p class="text-sm text-slate-500">Edy Pangangkat</p>
 
         <div class="sub-content flex justify-between items-center">
-          <span>{{ desc }}</span>
+          <span class="text-base sm:text-sm">{{ desc }}</span>
           <fa :icon="['fas', 'angle-right']" class="mr-3" />
         </div>
       </div>
