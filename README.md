@@ -1,19 +1,4 @@
-# portfolio_envaino
+# envaino Portfolio
+Just Simple website that contains some links to Edy Pangangkat's Social Media.
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+> Visit the main webpage [envaino](https://envaino.id)
